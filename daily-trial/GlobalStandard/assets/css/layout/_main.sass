@@ -1,0 +1,17 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.main
+  margin-top: calc($header-inner-sp * 100vw / 375)
+
+  @include responsive(md)
+    margin-top: calc($header-inner-pc * 100vw / 1100)
+
+  @include responsive(lg)
+    margin-top: calc($header-inner-pc * 1px)
+
+.l-container
+  width: 89.4%
+  max-width: $w-1100
+  margin-left: auto
+  margin-right: auto

@@ -1,0 +1,120 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.p-sec-heading
+
+  @include responsive(md)
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__title
+    display: inline-block
+    color: $c-main
+
+    .en
+      display: block
+      font-size: clamp_size(52, 100)
+      font-family: $fn-en
+      line-height: 1.21
+
+    .ja
+      display: block
+      font-size: clamp_size(16, 24)
+      font-weight: bold
+    
+    &--white
+      color: $c-text-w
+
+  &__btn
+    position: relative
+    text-align: right
+    z-index: 5
+
+    &-link
+      position: relative
+      display: inline-block
+      font-size: clamp_size(20, 32)
+      font-family: $fn-en
+      line-height: 1
+      padding-top: calc(10 * 100vw / 375)
+      padding-right: calc(98 * 100vw / 375)
+      padding-bottom: calc(10 * 100vw / 375)
+
+      @include responsive(md)
+        padding-top: 18px
+        padding-right: 140px
+        padding-bottom: 18px
+
+      .arrow
+        position: absolute
+        display: inline-block
+        top: 55%
+        transform: translateY(-50%)
+        width: calc(60 * 100vw / 375)
+        height: 2px
+        margin-left: calc(20 * 100vw / 375)
+        transition: width .4s
+        z-index: 1
+
+        &::before
+          position: absolute
+          top: -10px
+          right: 4px
+          content: ""
+          display: inline-block
+          width: 2px
+          height: 14px
+          transform: rotate(-55deg)
+          z-index: 1
+        
+        @include responsive(md)
+          width: 95px
+          margin-left: 20px
+
+      .circle
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        width: calc(40 * 100vw / 375)
+        height: calc(40 * 100vw / 375)
+        border-radius: 50vh
+        
+        @include responsive(md)
+          width: 50px
+          height: 50px
+
+    &--white
+      color: $c-text-w
+
+      .arrow,
+      .arrow::before
+        background: $c-text-w
+
+      .circle
+        border: 2px solid $c-primary
+
+    &--blue
+      color: $c-main
+
+      .arrow,
+      .arrow::before
+        background: $c-main
+
+      .circle
+        background: $c-primary
+
+    &--black
+      color: $c-text
+
+      .arrow,
+      .arrow::before
+        background: $c-text
+
+      .circle
+        background: $c-primary
+
+    @include hover()
+      .arrow
+        width: 145px

@@ -1,0 +1,13 @@
+@charset "utf-8"
+
+/* ========================================================================
+/* breakpoints
+/* ========================================================================
+$breakpoints: ("xs": (max-width: 375px), "sm": (min-width: 576px), "md": (min-width: 768px), "lg": (min-width: 1200px), "xl": (min-width: 1280px), "xxl": (min-width: 1400px)) !default
+
+@mixin responsive($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))}
+      @content
+  @else
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}"

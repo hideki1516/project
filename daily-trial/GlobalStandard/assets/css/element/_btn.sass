@@ -1,0 +1,56 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.btn
+  display: inline-block
+  text-align: center
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  &--short
+    font-size: rem(16)
+    width: 100%
+    max-width: 295px
+    padding: 1.375em 0
+
+    @include responsive(lg)
+      font-size: rem(14)
+      width: min(13.75vw, 176px)
+      padding: 1.7em 0
+  
+  // &--long
+
+  &--empty
+    color: $c-main
+    border: 1px solid #fff
+    background: #fff
+
+    @include responsive(lg)
+      border: 1px solid $c-main
+
+    @include hover()
+      color: $c-text-w
+      background: $c-main
+      border: 1px solid $c-main
+
+  &--fill
+    color: $c-text-w
+    background: $c-main
+    border: 1px solid #fff
+
+    @include responsive(lg)
+      border: 1px solid $c-main
+
+    @include hover()
+      background: $c-main-dark
+      border: 1px solid $c-main-dark
+
+
+// .el_btn_arrow
+
+//   &--md
+  
+//   &--lg
+
+//   &--main
+    
+//   &--primary

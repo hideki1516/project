@@ -1,0 +1,20 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.skew
+  transform: skewY(10deg)
+
+  &--reverse
+    transform: skewY(-10deg)
+
+  &--company
+    background: linear-gradient(transparent 19%, $c-main-light 19%)
+
+    @include responsive(md)
+      background: linear-gradient(transparent 42%, $c-main-light 42%)
+
+  &--service
+    background: linear-gradient(transparent 47.3%, $c-main-light 47.3%)
+
+    @include responsive(md)
+      background: linear-gradient(transparent 48.2%, $c-main-light 48.2%)

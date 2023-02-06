@@ -1,0 +1,110 @@
+@charset "utf-8"
+@use "sass:math"
+
+/* ========================================================================
+/* rem
+/* ========================================================================
+@function rem($pixelSize)
+  @return math.div($pixelSize, 16) * 1rem
+
+/* ========================================================================
+/* calc
+/* ========================================================================
+/* vw */
+@function vw($pixels, $width)
+  $mathPer : calc($pixels / $width * 100vw)
+  @return calc(round($mathPer * 1000) / 1000)
+
+@function vw_xs($pixelsVw)
+  $spWidth : 375
+  $mathVW : calc($pixelsVw / $spWidth * 100vw)
+  @return calc(round($mathVW * 1000) / 1000)
+
+@function vw_xl($pixelsVw)
+  $pcWidth : 1280
+  $mathVW : calc($pixelsVw / $pcWidth * 100vw)
+  @return calc(round($mathVW * 1000) / 1000)
+
+/* per */
+@function per($pixels, $width)
+  $mathPer : calc($pixels / $width * 100%)
+  @return calc(round($mathPer * 1000) / 1000)
+
+@function per_xs($pixels)
+  $spWidth : 375
+  $mathPer : calc($pixels / $spWidth * 100%)
+  @return calc(round($mathPer * 1000) / 1000)
+
+@function per_xl($pixels)
+  $pcWidth : 1280
+  $mathPer : calc($pixels / $pcWidth * 100%)
+  @return calc(round($mathPer * 1000) / 1000)
+
+/* em */
+@function em_size($childSize, $parentFontSize)
+  $mathEm : calc($childSize / $parentFontSize * 1em)
+  @return calc(round($mathEm * 1000) / 1000)
+
+/* min */
+@function min_size($minPixel, $minWidth)
+  $minCalc : calc($minPixel * 100vw / $minWidth)
+  @return min(#{$minCalc}, #{$minPixel}px)
+
+/* line-height */
+@function lh($parentFontSize, $childSize)
+  $mathLh : calc($parentFontSize / $childSize)
+  @return calc(round($mathLh * 1000) / 1000)
+
+/* ========================================================================
+/* clamp
+/* ========================================================================
+@function clamp_size($minFontSize, $maxFontSize)
+
+  $default-min-bp: 375
+  $default-max-bp: 1280
+
+  //最大font-sizeから最小font-sizeを減算しフォントサイズの変化する幅を求める
+  $fontSizeRate: $maxFontSize - $minFontSize
+  //最大viewportから最小viewportを減算しウィンドウの変化する幅を求めておく
+  $viewportRate: $default-max-bp - $default-min-bp
+
+  //フォントが変化する量をvw単位にする計算(小数点２桁で丸める)
+  $changingSize: math.div(math.round(math.div($fontSizeRate, $viewportRate) * 10000 ),100)
+
+  //フォントが変化しない部分をrem単位にする計算
+  $fixedSize: math.div(math.round(($minFontSize - math.div($fontSizeRate, $viewportRate) * $default-min-bp) * 62.5), 1000)
+
+  //最小フォントサイズをrem単位にする計算（小数点3桁で丸める）
+  $minRemFontSize: math.div(math.round($minFontSize * 62.5 ),1000)
+
+  //最大フォントサイズをrem単位にする計算（小数点３桁で丸める）
+  $maxRemFontSize: math.div(math.round($maxFontSize * 62.5),1000)
+
+  //出力
+  @return clamp(#{$minRemFontSize}rem, #{$fixedSize}rem + #{$changingSize}vw, #{$maxRemFontSize}rem)
+
+/* ========================================================================
+/*  line-clamp
+/* ========================================================================
+@mixin line-clamp($count: 3)
+  // 引数が数値以外だったらエラーを返す
+  @if type-of($count) != 'number'
+    @error 'line-clampの引数は必ず数値で指定してください'
+
+  @if $count == 1
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+  @else
+    display: -webkit-box
+    -webkit-line-clamp: $count
+    -webkit-box-orient: vertical
+    overflow: hidden
+
+/* ========================================================================
+/*  hover
+/* ========================================================================
+@mixin hover()
+  @media (hover: hover) and (pointer: fine)
+    &:hover
+      @content

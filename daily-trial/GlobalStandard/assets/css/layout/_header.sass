@@ -1,0 +1,167 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background: #fff
+  z-index: 999
+
+  &__inner
+    display: flex
+    align-items: center
+    padding: 0 vw_xs(20)
+    height: calc($header-inner-sp * 100vw / 375)
+    margin: 0 auto
+
+    @include responsive(md)
+      height: calc($header-inner-pc * 100vw / 1100)
+
+    @include responsive(lg)
+      height: calc($header-inner-pc * 1px)
+      padding: 0 1.25%
+      max-width: 1280px
+
+  &__title
+    width: calc(198 * 100vw / 375)
+    line-height: 1
+
+    @include responsive(md)
+      width: min(calc(283 * 100vw / 1280), 283px)
+
+    &_link
+      display: block
+
+  &__nav
+    display: none
+
+    @include responsive(lg)
+      display: block
+      margin-left: auto
+
+    &_inner
+      display: flex
+      align-items: center
+
+    &_list
+      display: flex
+      align-items: center
+
+    &_item
+      &:not(:first-child)::before
+        content: "／"
+        padding: 0 min(calc(16 * 100vw / 1280), 16px)
+
+    &_link
+      position: relative
+      display: inline-block
+      transition: color .4s cubic-bezier(.165,.84,.44,1)
+
+      &::after
+        position: absolute
+        bottom: -6px
+        left: 0
+        content: ""
+        width: 100%
+        height: 1px
+        background: $c-main
+        transform-origin: right top
+        transform: scale(0,1)
+        transition: transform .4s cubic-bezier(.165,.84,.44,1)
+
+      @include hover()
+        color: $c-main
+        
+        &::after
+          transform-origin: left top
+          transform: scale(1,1)
+
+    &_appeal
+      margin-left: min(calc(32 * 100vw / 1280), 32px)
+
+      & + &
+        margin-left: 10px
+
+  &__menu-btn
+    display: inline-block
+    position: relative
+    width: 27px
+    height: 16px
+    margin-left: auto
+    z-index: 200
+
+    @include responsive(lg)
+      display: none
+
+    &_inline
+      display: inline-block
+      position: absolute
+      width: 100%
+      height: 2px
+      left: 50%
+      transform: translateX(-50%)
+      background: $c-main
+      border-radius: 2px
+      transition: all .4s
+
+      &:nth-child(1)
+        top: 0
+
+      &:nth-child(2)
+        top: 50%
+        transform: translate(-50%,-50%)
+
+      &:nth-child(3)
+        bottom: 0
+
+    &.is-open
+      .header__menu-btn_inline
+        &:nth-child(1)
+          transform: translate(-50%,9px) rotate(45deg)
+
+        &:nth-child(2)
+          opacity: 0
+
+        &:nth-child(3)
+          transform: translate(-50%,-5px) rotate(-45deg)
+
+  &__nav-sp
+    position: fixed
+    right: 0
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    height: 100dvh
+    padding: 0 calc(40 * 100vw / 375)
+    background: $c-main
+    transform: translateY(100%)
+    transition: ease .4s
+    z-index: 100
+
+    @include responsive(lg)
+      display: none
+
+    &.is-open
+      transform: translateY(0)
+
+    &_list
+      margin-top: 110px
+
+    &_item
+      text-align: center
+
+      & + &
+        margin-top: 20px
+
+    &_link
+      display: block
+      font-size: rem(16)
+      color: $c-text-w
+      padding: 10px 0
+
+    &_appeal
+      text-align: center
+      margin-top: 32px
