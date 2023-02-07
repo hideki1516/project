@@ -13,19 +13,19 @@
     display: flex
     align-items: center
     padding: 0 vw_xs(20)
-    height: calc($header-inner-sp * 100vw / 375)
+    height: 60px
     margin: 0 auto
 
     @include responsive(md)
-      height: calc($header-inner-pc * 100vw / 1100)
+      height: calc(100 * 100vw / 1024)
 
     @include responsive(lg)
-      height: calc($header-inner-pc * 1px)
+      height: 100px
       padding: 0 1.25%
       max-width: 1280px
 
   &__title
-    width: calc(198 * 100vw / 375)
+    width: 198px
     line-height: 1
 
     @include responsive(md)
@@ -58,6 +58,9 @@
       position: relative
       display: inline-block
       transition: color .4s cubic-bezier(.165,.84,.44,1)
+
+      @include responsive(md)
+        font-size: clamp(0.75rem, 0.25rem + 0.78vw, 0.875rem) // 12px ~ 14px
 
       &::after
         position: absolute

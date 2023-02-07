@@ -1,0 +1,90 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.btn
+  display: inline-block
+  text-align: center
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  &--short
+    font-size: rem(16)
+    width: 100%
+    max-width: 295px
+    padding: 1.375em 0
+
+    @include responsive(lg)
+      font-size: clamp(0.75rem, 0.25rem + 0.78vw, 0.875rem) // 12px ~ 14px
+      width: min(13.75vw, 176px)
+      padding: 1.7em 0
+  
+  // &--long
+
+  &--empty
+    color: $c-main
+    border: 1px solid #fff
+    background: #fff
+
+    @include responsive(lg)
+      border: 1px solid $c-main
+
+    @include hover()
+      color: $c-text-w
+      background: $c-main
+      border: 1px solid $c-main
+
+  &--fill
+    color: $c-text-w
+    background: $c-main
+    border: 1px solid #fff
+
+    @include responsive(lg)
+      border: 1px solid $c-main
+
+    @include hover()
+      background: $c-main-dark
+      border: 1px solid $c-main-dark
+
+  &--arrow
+    position: relative
+    display: inline-block
+    width: 295px
+    max-width: 100%
+    font-size: rem(16)
+    color: $c-primary
+    padding: em_size(28, 16) 0
+    border: 3px solid $c-primary
+
+    @include responsive(md)
+      font-size: rem(24)
+      width: 315px
+      padding: em_size(35, 24) 0
+
+    .arrow
+      display: block
+      position: absolute
+      top: 50%
+      right: em_size(20, 16)
+      transform: translateY(-50%)
+
+      @include responsive(md)
+        right: em_size(32, 24)
+        transition: color background .4s cubic-bezier(.165,.84,.44,1)
+
+      &::after
+        content: ""
+        display: block
+        width: 20px
+        height: 13px
+        background: url("../../assets/images/common/ico_arrow-y.svg") no-repeat
+        background-size: cover
+        transition: transform .4s cubic-bezier(.165,.84,.44,1)
+
+    @include hover()
+      color: $c-text
+      background: $c-primary
+
+      .arrow
+        &::after
+          transform: translateX(6px)
+          background: url("../../assets/images/common/ico_arrow-b.svg") no-repeat
+          background-size: cover

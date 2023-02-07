@@ -16,9 +16,9 @@
 })();
 
 // ページトップに戻るボタン
-const js_btnTop = document.querySelector('.js_btnTop');
+const js_page_top = document.querySelector('.js_page_top');
 
-js_btnTop.addEventListener('click', scroll_top);
+js_page_top.addEventListener('click', scroll_top);
 function scroll_top(e) {
   e.preventDefault();
   window.scroll({ top: 0, behavior: "smooth" });
@@ -29,9 +29,9 @@ window.addEventListener('scroll', scroll_event);
 
 function scroll_event() {
   if (window.pageYOffset > 100) {
-    js_btnTop.style.opacity = '1';
+    js_page_top.style.opacity = '1';
   } else if (window.pageYOffset < 100) {
-    js_btnTop.style.opacity = '0';
+    js_page_top.style.opacity = '0';
   }
 }
 

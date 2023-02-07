@@ -1,0 +1,62 @@
+
+@charset "utf-8"
+@use "global/_global" as *
+
+#top
+  .p-news
+    margin: 60px 0 100px
+    padding-bottom: 70px
+
+    @include responsive(md)
+      margin: 165px 0 16px
+      padding-bottom: 138px
+
+    &__list
+      padding: 40px 20px
+      margin-top: 60px
+      background: #fff
+      box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16)
+
+      @include responsive(md)
+        max-width: 768px
+        padding: 60px 40px
+        margin: 80px auto 0
+
+    &__item
+      padding: 16px 0 32px
+      border-bottom: 1px solid #ddd
+      
+      @include responsive(md)
+        padding: 20px 0 32px
+
+      &:first-child
+        padding-top: 0
+
+      &_head
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+      &_category
+        display: inline-block
+        font-size: rem(12)
+        color: $c-secondary
+        padding: 6px 20px
+        border: 1px solid $c-secondary
+
+        @include responsive(md)
+          font-size: rem(14)
+
+      &_date
+        color: #888
+
+      &_ttl
+        display: block
+        font-weight: bold
+        margin-top: 16px
+
+        @include responsive(md)
+          font-size: rem(16)
+
+    .p-sec-heading__btn
+      margin-top: 32px

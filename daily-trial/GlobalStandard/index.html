@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js" defer></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll" defer></script>
+  <script src="assets/js/base.js" defer></script>
 </head>
 <body id="top">
   <!-- header -->
@@ -228,43 +233,41 @@
     <!-- // case -->
 
     <!-- news -->
-    <section class="bl_news el_skew el_skew__news">
-      <div class="ly_container">
-        <div class="el_sectionHead">
-          <h2 class="el_sectionTitle"><span class="en">NEWS</span><span class="ja">新着情報</span></h2>
-          <div class="el_sectionViewMore hp_pc_show">
-            <a href="company.html" class="el_sectionViewMoreLink el_sectionViewMoreLink__black">
+    <section class="p-news skew skew--news">
+      <div class="l-container skew--reverse">
+        <div class="p-sec-heading">
+          <h2 class="p-sec-heading__title"><span class="en">news</span><span class="ja">新着情報</span></h2>
+          <div class="p-sec-heading__btn hp_pc_show">
+            <a href="news.html" class="p-sec-heading__btn-link p-sec-heading__btn--black">
               View more<span class="arrow"></span><span class="circle"></span>
             </a>
           </div>
         </div>
-        <div class="bl_news_container">
-          <ul class="bl_newsList">
-            <li class="bl_newsItem">
-              <div class="bl_newsItem_head">
-                <p class="bl_newsItem_category">営業時間</p>
-                <p class="bl_newsItem_date"><time datetime="2021-07-20">2021.07.20</time></p>
-              </div>
-              <a href="#" class="bl_newsItem_ttl">お盆期間中の営業について</a>
-            </li>
-            <li class="bl_newsItem">
-              <div class="bl_newsItem_head">
-                <p class="bl_newsItem_category">その他</p>
-                <p class="bl_newsItem_date"><time datetime="2021-06-01">2021.06.01</time></p>
-              </div>
-              <a href="#" class="bl_newsItem_ttl">新型コロナウイルス対策ご協力のお願い</a>
-            </li>
-            <li class="bl_newsItem">
-              <div class="bl_newsItem_head">
-                <p class="bl_newsItem_category">その他</p>
-                <p class="bl_newsItem_date"><time datetime="2021-05-01">2021.05.01</time></p>
-              </div>
-              <a href="#" class="bl_newsItem_ttl">オンライン英会話スクール「グッドイングリッシュオンライン株式会社」との業務提携について</a>
-            </li>
-          </ul>
-        </div>
-        <div class="el_sectionViewMore hp_sp_show">
-          <a href="news.html" class="el_sectionViewMoreLink el_sectionViewMoreLink__main">
+        <ul class="p-news__list">
+          <li class="p-news__item">
+            <div class="p-news__item_head">
+              <p class="p-news__item_category">営業時間</p>
+              <p class="p-news__item_date"><time datetime="2021-07-20">2021.07.20</time></p>
+            </div>
+            <a href="#" class="p-news__item_ttl">お盆期間中の営業について</a>
+          </li>
+          <li class="p-news__item">
+            <div class="p-news__item_head">
+              <p class="p-news__item_category">その他</p>
+              <p class="p-news__item_date"><time datetime="2021-06-01">2021.06.01</time></p>
+            </div>
+            <a href="#" class="p-news__item_ttl">新型コロナウイルス対策ご協力のお願い</a>
+          </li>
+          <li class="p-news__item">
+            <div class="p-news__item_head">
+              <p class="p-news__item_category">その他</p>
+              <p class="p-news__item_date"><time datetime="2021-05-01">2021.05.01</time></p>
+            </div>
+            <a href="#" class="p-news__item_ttl">オンライン英会話スクール「グッドイングリッシュオンライン株式会社」との業務提携について</a>
+          </li>
+        </ul>
+        <div class="p-sec-heading__btn hp_sp_show">
+          <a href="news.html" class="p-sec-heading__btn-link p-sec-heading__btn--blue">
             View more<span class="arrow"></span><span class="circle"></span>
           </a>
         </div>
@@ -273,41 +276,30 @@
     <!-- // news -->
   </main>
 
-  <section class="el_pageLink">
-    <ul class="el_pageLink_list">
-      <li class="el_pageLink_item el_pageLink_item__download">
-        <p class="el_pageLink_ttl"><span class="en">DOWNLOAD</span><span class="ja">資料ダウンロード</span></p>
-        <div class="el_pageLink_btn"><a href="#" class="el_btn_arrow el_btn_arrow__lg el_btn_arrow__primary"><span class="text">View more</span><span class="arrow"><span class="arrowIcon"></span></span></a></div>
+  <!-- footer -->
+  <footer class="l-footer">
+    <ul class="l-footer__conversion">
+      <li class="l-footer__conversion_item l-footer__conversion_item--download">
+        <p class="l-footer__conversion_ttl"><span class="en un_en">download</span><span class="ja">資料ダウンロード</span></p>
+        <div class="l-footer__conversion_btn"><a href="download.html" class="btn btn--arrow un_en">View more<span class="arrow"></span></a></div>
       </li>
-      <li class="el_pageLink_item el_pageLink_item__contact">
-        <p class="el_pageLink_ttl"><span class="en">CONTACT</span><span class="ja">お問い合わせ</span></p>
-        <div class="el_pageLink_btn"><a href="#" class="el_btn_arrow el_btn_arrow__lg el_btn_arrow__primary"><span class="text">View more</span><span class="arrow"><span class="arrowIcon"></span></span></a></div>
+      <li class="l-footer__conversion_item l-footer__conversion_item--contact">
+        <p class="l-footer__conversion_ttl"><span class="en un_en">contact</span><span class="ja">お問い合わせ</span></p>
+        <div class="l-footer__conversion_btn"><a href="contact.html" class="btn btn--arrow un_en">View more<span class="arrow"></span></a></div>
       </li>
     </ul>
-  </section>
+    <div class="l-footer__contents">
+      <div class="l-footer__logo"><a href="index.html"><img src="assets/images/common/logo-w.svg" alt="Global Standard"></a></div>
+      <p class="l-footer__info">〒550-1000　大阪市西区土佐堀9-5-5<br>TEL　06-123-4567<br>FAX　06-123-4568</p>
+      <p class="l-footer__copyright"><small>©︎2021 Global Standard. All Rights Reserved.</small></p>
+    </div>
+  </footer>
+  <!-- // footer -->
 
-  <div class="el_btnTop js_btnTop">
+  <!-- page_top -->
+  <div class="page_top js_page_top">
     <a href="#"><img src="assets/images/common/ico_top.svg" alt="TOPに戻る"></a>
   </div>
-
-  <footer class="ly_footer">
-    <div class="ly_footer_inner">
-      <div class="ly_footer_logo"><img src="assets/images/common/logo-w.svg" alt="Global Standard"></div>
-      <div class="ly_footer_address">
-        <p class="ly_footer_addressTxt">
-          〒550-1000　大阪市西区土佐堀9-5-5<br>
-          TEL　06-123-4567<br>
-          FAX　06-123-4568
-        </p>
-      </div>
-    </div>
-    <p class="ly_footer_copyright">©︎2021 Global Standard. All Rights Reserved.</p>
-  </footer>
-
-  <!-- JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll"></script>
-  <script src="assets/js/base.js"></script>
+  <!-- // page_top -->
 </body>
 </html>
