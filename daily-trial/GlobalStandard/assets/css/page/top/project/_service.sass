@@ -1,98 +1,97 @@
 @charset "utf-8"
 @use "global/_global" as *
 
-#top
-  .p-service
-    padding-top: 60px
-    padding-bottom: 70px // 103px - (66 / 2) = 70px
+.p-service
+  padding-top: 60px
+  padding-bottom: 70px // 103px - (66 / 2) = 70px
+
+  @include responsive(md)
+    padding-top: 120px
+    padding-bottom:112px
+
+  &__list
+    padding-left: per_xs(15)
+    margin-top: 65px
 
     @include responsive(md)
-      padding-top: 120px
-      padding-bottom:112px
+      display: flex
+      justify-content: space-between
+      padding-left: 0
 
-    &__list
-      padding-left: per_xs(15)
-      margin-top: 65px
+  &__item
+    position: relative
+
+    &:not(:first-child)
+      margin-top: 72px
+
+    @include responsive(md)
+      width: calc((100% - 140px) / 3)
+
+      &:nth-child(2)
+        margin-top: 55px
+      
+      &:nth-child(3)
+        margin-top: 110px
+
+    &_num
+      position: absolute
+      top: -50px
+      right: 8px
 
       @include responsive(md)
-        display: flex
-        justify-content: space-between
-        padding-left: 0
+        top: -12%
+        right: 2%
 
-    &__item
-      position: relative
-
-      &:not(:first-child)
-        margin-top: 72px
-
-      @include responsive(md)
-        width: calc((100% - 140px) / 3)
-
-        &:nth-child(2)
-          margin-top: 55px
-        
-        &:nth-child(3)
-          margin-top: 110px
-
-      &_num
-        position: absolute
-        top: -50px
-        right: 8px
+      p
+        position: relative
+        font-size: rem(100)
+        font-family: $fn-en
+        color: $c-main
+        z-index: 1
 
         @include responsive(md)
-          top: -12%
-          right: 2%
+          font-size: min_size(100, 1280)
 
-        p
-          position: relative
+        &::before
+          content: attr(data-num)
+          position: absolute
+          top: 0.04em
+          right: -0.04em
           font-size: rem(100)
           font-family: $fn-en
-          color: $c-main
-          z-index: 1
+          color: $c-text-w
+          z-index: -1
 
           @include responsive(md)
             font-size: min_size(100, 1280)
 
-          &::before
-            content: attr(data-num)
-            position: absolute
-            top: 0.04em
-            right: -0.04em
-            font-size: rem(100)
-            font-family: $fn-en
-            color: $c-text-w
-            z-index: -1
+    &_head
+      position: relative
 
-            @include responsive(md)
-              font-size: min_size(100, 1280)
+    &_ttl
+      position: absolute
+      left: per_xs(-15)
+      bottom: 34px
 
-      &_head
-        position: relative
-
-      &_ttl
-        position: absolute
-        left: per_xs(-15)
+      @include responsive(md)
+        left: -10%
         bottom: 34px
 
+      span
+        font-size: rem(28)
+        font-weight: bold
+        color: $c-main
+        line-height: 1.7
+        background: #fff
+        box-decoration-break: clone	
+        -webkit-box-decoration-break: clone
+
         @include responsive(md)
-          left: -10%
-          bottom: 34px
+          font-size: min_size(28, 1280)
 
-        span
-          font-size: rem(28)
-          font-weight: bold
-          color: $c-main
-          line-height: 1.7
-          background: #fff
-          box-decoration-break: clone	
-          -webkit-box-decoration-break: clone
+    &_txt
+      margin-top: 1.14em
+      line-height: lh(24, 14)
 
-          @include responsive(md)
-            font-size: min_size(28, 1280)
-
-      &_txt
-        margin-top: 1.14em
-        line-height: lh(24, 14)
-
-    .p-sec-heading__btn
-      margin-top: 32px
+  .p-sec-heading__btn
+    margin-top: 32px

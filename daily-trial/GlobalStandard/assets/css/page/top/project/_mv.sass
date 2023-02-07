@@ -1,62 +1,62 @@
 @charset "utf-8"
 @use "global/_global" as *
 
-#top
-  .mv
-    &__inner
-      position: relative
-      margin-left: per_xs(20)
-      z-index: 10
+.mv
+  &__inner
+    position: relative
+    margin-left: per_xs(20)
+    z-index: 10
 
-      @include responsive(md)
-        margin-left: per_xl(50)
+    @include responsive(md)
+      margin-left: per_xl(50)
 
-    &__slider
-      width: 100%
-      margin-left: per_xs(20)
-      aspect-ratio: 335 / 607
+  &__slider
+    width: 100%
+    margin-left: per_xs(20)
+    aspect-ratio: 335 / 607
 
-      @include responsive(md)
-        aspect-ratio: 1230 / 700
-        margin-left: per_xl(40)
+    @include responsive(md)
+      aspect-ratio: 1230 / 700
+      margin-left: per_xl(40)
 
-      img
-        min-width: 100%
-        min-height: 100%
-        object-fit: cover
+    img
+      min-width: 100%
+      min-height: 100%
+      object-fit: cover
 
-    &__message
-      position: absolute
-      top: vw_xs(387)
-      left: 0
+  &__message
+    position: absolute
+    top: vw_xs(387)
+    left: 0
 
-      @include responsive(md)
-        top: vw_xl(435)
+    @include responsive(md)
+      top: vw_xl(435)
 
-      &_main
-        span
-          font-size: calc(40 * 100vw / 375)
-          font-family: $fn-en
-          color: $c-main
-          line-height: 1.5
-          background: #fff
-          box-decoration-break: clone	
-          -webkit-box-decoration-break: clone
+    &_main
+      span
+        font-size: calc(40 * 100vw / 375)
+        font-family: $fn-en
+        color: $c-main
+        line-height: 1.5
+        text-transform: uppercase
+        background: #fff
+        box-decoration-break: clone	
+        -webkit-box-decoration-break: clone
 
-          @include responsive(md)
-            font-size: vw_xl(60)
+        @include responsive(md)
+          font-size: vw_xl(60)
 
-      &_sub
-        margin-top: em_size(16, 16)
+    &_sub
+      margin-top: em_size(16, 16)
 
-        span
-          font-size: vw_xs(16)
-          font-weight: bold
-          color: $c-text-w
-          line-height: 1.45
-          background: $c-main
-          box-decoration-break: clone	
-          -webkit-box-decoration-break: clone
+      span
+        font-size: vw_xs(16)
+        font-weight: bold
+        color: $c-text-w
+        line-height: 1.45
+        background: $c-main
+        box-decoration-break: clone	
+        -webkit-box-decoration-break: clone
 
-          @include responsive(md)
-            font-size: vw_xl(20)
+        @include responsive(md)
+          font-size: vw_xl(20)

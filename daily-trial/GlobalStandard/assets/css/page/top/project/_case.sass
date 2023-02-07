@@ -1,0 +1,71 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.p-case
+  position: relative
+  margin-top: 60px
+  padding: 60px 0
+  background: url("../../assets/images/top/bg_case.png") center center no-repeat
+  background-size: cover
+  z-index: 1
+
+  @include responsive(md)
+    margin-top: 0
+    padding: 100px 0 120px
+
+  &__list
+    display: grid
+    gap: 52px 0
+    grid-template-columns: repeat(1, 1fr)
+    margin-top: 40px
+
+    @include responsive(md)
+      gap: 70px
+      grid-template-columns: repeat(2, 1fr)
+      margin-top: 80px
+
+    @include responsive(lg)
+      grid-template-columns: repeat(3, 1fr)
+
+
+  &__card
+    $__card: &
+    color: $c-text-w
+
+    &_link
+      display: block
+
+      @include hover()
+        #{$__card}_icon
+          background: url("../../assets/images/common/ico_arrow-y.svg") no-repeat
+          background-size: cover
+          transform: translateX(0)
+
+    &_img
+      img
+        aspect-ratio: 320 / 240
+        width: 100%
+        object-fit: cover
+
+    &_name
+      font-size: rem(16)
+      margin-top: 1em
+
+    &_footer
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-top: 0.857em
+
+    &_category
+      display: inline-block
+      padding: 0.42em 1.14em
+      border: 1px solid #fff
+
+    &_icon
+      width: 30px
+      height: 30px
+      background: url("../../assets/images/common/ico_arrow-w.svg") no-repeat
+      background-size: cover
+      transform: translateX(-10px)
+      transition: all .4s cubic-bezier(.165,.84,.44,1)
