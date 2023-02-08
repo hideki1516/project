@@ -7,12 +7,13 @@
   <title>Global Standard</title>
   <!-- CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll" defer></script>
+  <script src="assets/js/swiper.js" defer></script>
   <script src="assets/js/base.js" defer></script>
 </head>
 <body id="top">
@@ -20,51 +21,49 @@
   <header class="header">
     <div class="header__inner">
       <h1 class="header__title"><a href="index.html" class="header__title_link"><img src="assets/images/common/logo.svg" alt="Global Standard"></a></h1>
-
-      <nav class="header__nav">
-        <div class="header__nav_inner">
-          <ul class="header__nav_list">
-            <li class="header__nav_item"><a href="index.html" class="header__nav_link">トップ</a></li>
-            <li class="header__nav_item"><a href="company.html" class="header__nav_link">当社について</a></li>
-            <li class="header__nav_item"><a href="service.html" class="header__nav_link">サービス</a></li>
-            <li class="header__nav_item"><a href="case.html" class="header__nav_link">導入事例</a></li>
-            <li class="header__nav_item"><a href="news.html" class="header__nav_link">お知らせ</a></li>
-            <li class="header__nav_appeal"><a href="download.html" class="btn btn--short btn--empty">資料ダウンロード</a></li>
-            <li class="header__nav_appeal"><a href="contact.html" class="btn btn--short btn--fill">お問い合わせ</a></li>
-          </ul>
-        </div>
+      <nav class="header__nav js-header_nav">
+        <ul class="header__nav_list">
+          <li class="header__nav_item"><a href="index.html" class="header__nav_link">トップ</a></li>
+          <li class="header__nav_item"><a href="company.html" class="header__nav_link">当社について</a></li>
+          <li class="header__nav_item"><a href="service.html" class="header__nav_link">サービス</a></li>
+          <li class="header__nav_item"><a href="case.html" class="header__nav_link">導入事例</a></li>
+          <li class="header__nav_item"><a href="news.html" class="header__nav_link">お知らせ</a></li>
+          <li class="header__nav_appeal"><a href="download.html" class="btn btn--short btn--empty">資料ダウンロード</a></li>
+          <li class="header__nav_appeal"><a href="contact.html" class="btn btn--short btn--fill">お問い合わせ</a></li>
+        </ul>
       </nav>
-
-      <button class="header__menu-btn">
+      <button class="header__menu-btn js-header_menu_btn">
         <span class="header__menu-btn_inline"></span>
         <span class="header__menu-btn_inline"></span>
         <span class="header__menu-btn_inline"></span>
       </button>
     </div>
-
-    <nav class="header__nav-sp">
-      <ul class="header__nav-sp_list">
-        <li class="header__nav-sp_item"><a href="index.html" class="header__nav-sp_link">トップ</a></li>
-        <li class="header__nav-sp_item"><a href="company.html" class="header__nav-sp_link">当社について</a></li>
-        <li class="header__nav-sp_item"><a href="service.html" class="header__nav-sp_link">サービス</a></li>
-        <li class="header__nav-sp_item"><a href="case.html" class="header__nav-sp_link">導入事例</a></li>
-        <li class="header__nav-sp_item"><a href="news.html" class="header__nav-sp_link">お知らせ</a></li>
-        <li class="header__nav-sp_appeal"><a href="download.html" class="btn btn--short btn--fill">資料ダウンロード</a></li>
-        <li class="header__nav-sp_appeal"><a href="contact.html" class="btn btn--short btn--empty">お問い合わせ</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main class="main">
     <!-- mv -->
     <section class="mv">
       <div class="mv__inner">
-        <div class="mv__slider">
-          <div class="mv__slider_item">
-            <picture>
-              <source srcset="assets/images/top/mv01_sp.png" media="(max-width: 767px)">
-              <img src="assets/images/top/mv01_pc.png" alt="">
-            </picture>
+        <div class="mv__slider js-mv_swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="assets/images/top/mv01_pc.png" media="(min-width: 768px)">
+                <img src="assets/images/top/mv01_sp.png" alt="">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="assets/images/top/mv02_pc.png" media="(min-width: 768px)">
+                <img src="assets/images/top/mv02_sp.png" alt="">
+              </picture>
+            </div>
+            <div class="swiper-slide">
+              <picture>
+                <source srcset="assets/images/top/mv03_pc.png" media="(min-width: 768px)">
+                <img src="assets/images/top/mv03_sp.png" alt="">
+              </picture>
+            </div>
           </div>
         </div>
         <div class="mv__message">
@@ -297,7 +296,7 @@
   <!-- // footer -->
 
   <!-- page_top -->
-  <div class="page_top js_page_top">
+  <div class="page_top js-btn_page_top">
     <a href="#"><img src="assets/images/common/ico_top.svg" alt="TOPに戻る"></a>
   </div>
   <!-- // page_top -->

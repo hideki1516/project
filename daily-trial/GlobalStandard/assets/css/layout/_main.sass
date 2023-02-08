@@ -2,13 +2,13 @@
 @use "global/_global" as *
 
 .main
-  margin-top: calc($header-inner-sp * 100vw / 375)
+  margin-top: 60px
 
   @include responsive(md)
-    margin-top: calc($header-inner-pc * 100vw / 1100)
+    margin-top: calc(100 * 100vw / 1024)
 
   @include responsive(lg)
-    margin-top: calc($header-inner-pc * 1px)
+    margin-top: 100px
 
 .l-container
   width: 89.4%

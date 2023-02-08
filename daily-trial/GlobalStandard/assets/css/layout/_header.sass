@@ -29,67 +29,107 @@
     line-height: 1
 
     @include responsive(md)
-      width: min(calc(283 * 100vw / 1280), 283px)
+      width: 283px
 
     &_link
       display: block
 
   &__nav
-    display: none
+    position: fixed
+    right: 0
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    height: 100dvh
+    padding: 0 calc(40 * 100vw / 375)
+    background: $c-main
+    transform: translateY(-100%)
+    transition: ease .4s
+    z-index: 100
 
     @include responsive(lg)
-      display: block
-      margin-left: auto
-
-    &_inner
+      position: static
       display: flex
       align-items: center
+      justify-content: flex-end
+      padding: 0
+      width: calc(100% - 283px)
+      height: 100%
+      background: transparent
+      transform: translateY(0)
+
+    &.is-open
+      transform: translateY(0)
 
     &_list
-      display: flex
-      align-items: center
+      margin-top: 110px
+
+      @include responsive(lg)
+        display: flex
+        align-items: center
+        margin-top: 0
 
     &_item
-      &:not(:first-child)::before
-        content: "／"
-        padding: 0 min(calc(16 * 100vw / 1280), 16px)
-
-    &_link
-      position: relative
-      display: inline-block
-      transition: color .4s cubic-bezier(.165,.84,.44,1)
-
-      @include responsive(md)
-        font-size: clamp(0.75rem, 0.25rem + 0.78vw, 0.875rem) // 12px ~ 14px
-
-      &::after
-        position: absolute
-        bottom: -6px
-        left: 0
-        content: ""
-        width: 100%
-        height: 1px
-        background: $c-main
-        transform-origin: right top
-        transform: scale(0,1)
-        transition: transform .4s cubic-bezier(.165,.84,.44,1)
-
-      @include hover()
-        color: $c-main
-        
-        &::after
-          transform-origin: left top
-          transform: scale(1,1)
-
-    &_appeal
-      margin-left: min(calc(32 * 100vw / 1280), 32px)
+      text-align: center
 
       & + &
-        margin-left: 10px
+        margin-top: 20px
+
+      @include responsive(lg)
+        & + &
+          margin-top: 0
+
+        &:not(:first-child)::before
+          content: "／"
+          padding: 0 clamp(0.625rem, -0.875rem + 2.34vw, 1rem)
+
+    &_link
+      display: block
+      font-size: rem(16)
+      color: $c-text-w
+      padding: 10px 0
+
+      @include responsive(lg)
+        font-size: clamp(0.75rem, 0.25rem + 0.78vw, 0.875rem) // 12px ~ 14px
+        color: $c-text
+        position: relative
+        display: inline-block
+        transition: color .4s cubic-bezier(.165,.84,.44,1)
+
+        &::after
+          position: absolute
+          bottom: -6px
+          left: 0
+          content: ""
+          width: 100%
+          height: 1px
+          background: $c-main
+          transform-origin: right top
+          transform: scale(0,1)
+          transition: transform .4s cubic-bezier(.165,.84,.44,1)
+
+        @include hover()
+          color: $c-main
+          
+          &::after
+            transform-origin: left top
+            transform: scale(1,1)
+
+    &_appeal
+      text-align: center
+      margin-top: 32px
+
+      @include responsive(lg)
+        margin-top: 0
+        margin-left: clamp(1.375rem, -1.125rem + 3.91vw, 2rem) // 22px ~ 32px
+
+        & + &
+          margin-left: 10px
 
   &__menu-btn
-    display: inline-block
     position: relative
+    display: inline-block
     width: 27px
     height: 16px
     margin-left: auto
@@ -121,6 +161,8 @@
 
     &.is-open
       .header__menu-btn_inline
+        background: #fff
+        
         &:nth-child(1)
           transform: translate(-50%,9px) rotate(45deg)
 
@@ -130,41 +172,41 @@
         &:nth-child(3)
           transform: translate(-50%,-5px) rotate(-45deg)
 
-  &__nav-sp
-    position: fixed
-    right: 0
-    left: 0
-    top: 0
-    width: 100vw
-    height: 100vh
-    height: 100dvh
-    padding: 0 calc(40 * 100vw / 375)
-    background: $c-main
-    transform: translateY(100%)
-    transition: ease .4s
-    z-index: 100
+  // &__nav-sp
+  //   position: fixed
+  //   right: 0
+  //   left: 0
+  //   top: 0
+  //   width: 100vw
+  //   height: 100vh
+  //   height: 100dvh
+  //   padding: 0 calc(40 * 100vw / 375)
+  //   background: $c-main
+  //   transform: translateY(100%)
+  //   transition: ease .4s
+  //   z-index: 100
 
-    @include responsive(lg)
-      display: none
+  //   @include responsive(lg)
+  //     display: none
 
-    &.is-open
-      transform: translateY(0)
+  //   &.is-open
+  //     transform: translateY(0)
 
-    &_list
-      margin-top: 110px
+  //   &_list
+  //     margin-top: 110px
 
-    &_item
-      text-align: center
+  //   &_item
+  //     text-align: center
 
-      & + &
-        margin-top: 20px
+  //     & + &
+  //       margin-top: 20px
 
-    &_link
-      display: block
-      font-size: rem(16)
-      color: $c-text-w
-      padding: 10px 0
+  //   &_link
+  //     display: block
+  //     font-size: rem(16)
+  //     color: $c-text-w
+  //     padding: 10px 0
 
-    &_appeal
-      text-align: center
-      margin-top: 32px
+  //   &_appeal
+  //     text-align: center
+  //     margin-top: 32px

@@ -14,7 +14,7 @@
 
     @include responsive(lg)
       font-size: clamp(0.75rem, 0.25rem + 0.78vw, 0.875rem) // 12px ~ 14px
-      width: min(13.75vw, 176px)
+      width: clamp(8.5rem, -1.5rem + 15.63vw, 11rem) // 136px ~ 176px
       padding: 1.7em 0
   
   // &--long
@@ -27,10 +27,10 @@
     @include responsive(lg)
       border: 1px solid $c-main
 
-    @include hover()
-      color: $c-text-w
-      background: $c-main
-      border: 1px solid $c-main
+      @include hover()
+        color: $c-text-w
+        background: $c-main
+        border: 1px solid $c-main
 
   &--fill
     color: $c-text-w
@@ -40,9 +40,9 @@
     @include responsive(lg)
       border: 1px solid $c-main
 
-    @include hover()
-      background: $c-main-dark
-      border: 1px solid $c-main-dark
+      @include hover()
+        background: $c-main-dark
+        border: 1px solid $c-main-dark
 
   &--arrow
     position: relative
