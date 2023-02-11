@@ -1,0 +1,54 @@
+@charset "utf-8"
+@use "global/_global" as *
+
+.p-page-head
+  position: relative
+
+  &::before
+    position: absolute
+    top: 0
+    left: 0
+    content: ""
+    display: block
+    width: per_xs(165)
+    height: 100%
+    clip-path: polygon(0 0, 100% 0, 14% 100%, 0% 100%)
+    background: rgba(2,62,120,0.8)
+
+    @include responsive(md)
+      width: per_xl(365)
+      clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%)
+
+  img
+    max-height: 250px
+    object-fit: cover
+
+  &__title
+    position: absolute
+    top: 50%
+    left: 20px
+    transform: translateY(-50%)
+    color: $c-main
+
+    @include responsive(md)
+      left: per_xl(220)
+
+    .en
+      font-size: clamp_size(32, 60)
+      font-family: $fn-en
+      line-height: 1.2
+      text-transform: uppercase
+      background: #fff
+      box-decoration-break: clone	
+      -webkit-box-decoration-break: clone
+
+    .ja
+      display: inline-block
+      margin-top: 8px
+      font-size: clamp_size(16, 20)
+      font-weight: bold
+      font-family: $fn-ja
+      line-height: 1.4
+      background: #fff
+      box-decoration-break: clone	
+      -webkit-box-decoration-break: clone

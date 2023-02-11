@@ -33,9 +33,18 @@
 
     @include responsive(md)
       top: vw_xl(435)
+    
+    span
+      &.revealTextAnime,
+      &.revealTextAnime::after
+        animation-delay: 0
+        animation-iteration-count: 1
+        animation-duration: 800ms
+        animation-fill-mode: both
+        animation-timing-function: $easeInOutCirc
 
     &_main
-      span
+      .text
         font-size: calc(40 * 100vw / 375)
         font-family: $fn-en
         color: $c-main
@@ -51,7 +60,7 @@
     &_sub
       margin-top: em_size(16, 16)
 
-      span
+      .text
         font-size: vw_xs(16)
         font-weight: bold
         color: $c-text-w

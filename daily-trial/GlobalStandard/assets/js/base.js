@@ -42,3 +42,16 @@ header_menu_btn.addEventListener('click', () => {
   header_nav.classList.toggle('is-open');
   header_menu_btn.classList.toggle('is-open');
 });
+
+// スクロールエフェクト
+const scrollElem = document.querySelectorAll('.c-animate');
+const scrollAnimation = () => {
+  for(let i = 0; i < scrollElem.length; i++) {
+    const trigger = 50;
+    if (window.innerHeight > scrollElem[i].getBoundingClientRect().top + trigger) {
+      scrollElem[i].classList.add('is-animated');
+    }
+  }
+};
+window.addEventListener('load', scrollAnimation);
+window.addEventListener('scroll', scrollAnimation);

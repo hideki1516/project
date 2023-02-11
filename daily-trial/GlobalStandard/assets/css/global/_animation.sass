@@ -1,1 +1,71 @@
 @charset "utf-8"
+@use "global/_variables" as *
+
+.c-animate
+  opacity: 0
+  
+  &.is-animated
+
+    /* fadeUp
+    /* ---------------------------------------------------------- */
+    &.fadeUpAnime
+      transition: transform 1.2s, opacity 1.2s
+      transition-delay: 0.6s
+      animation-name: fadeUp
+      animation-duration: 1s
+      animation-delay: 95ms
+      animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+      animation-fill-mode: forwards
+
+    @keyframes fadeUp
+      0%
+        transform: translateY(35px)
+        opacity: 0
+      100%
+        transform: translateY(0px)
+        opacity: 1
+
+    /* revealText
+    /* ---------------------------------------------------------- */
+    &.revealTextAnime
+      position: relative
+      white-space: nowrap
+      cursor: default
+      animation-name: clipText
+      animation-delay: 0
+      animation-duration: 800ms
+      animation-iteration-count: 1
+      opacity: 1
+    
+      &::after
+        content: ""
+        position: absolute
+        z-index: 1
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        transform: scaleX(0)
+        transform-origin: 0 50%
+        pointer-events: none
+        animation-name: textRevealer
+
+      &.revealTextBgMain
+        &::after
+          background-color: $c-main
+
+    @keyframes clipText
+      from
+        clip-path: inset(0 100% 0 0)
+      to
+        clip-path: inset(0 0 0 0)
+
+    @keyframes textRevealer
+      0%, 50%
+        transform-origin: 0 50%
+      60%, 100%
+        transform-origin: 100% 50%		
+      60%
+        transform: scaleX(1)
+      100%
+        transform: scaleX(0)

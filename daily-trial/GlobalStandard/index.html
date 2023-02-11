@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll" defer></script>
-  <script src="assets/js/swiper.js" defer></script>
-  <script src="assets/js/base.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer="defer"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll" defer="defer"></script>
+  <script src="assets/js/swiper.js" defer="defer"></script>
+  <script src="assets/js/base.js" defer="defer"></script>
 </head>
 <body id="top">
   <!-- header -->
@@ -67,8 +67,21 @@
           </div>
         </div>
         <div class="mv__message">
-          <p class="mv__message_main"><span>you can<br class="hp_sp_show">change<br>the world</span></p>
-          <p class="mv__message_sub"><span>世界で活躍できるグローバルな人材を育てる</span></p>
+          <p class="mv__message_main">
+            <span class="hp_sp_show">
+              <span class="text c-animate revealTextAnime revealTextBgMain">you can</span>
+              <br>
+              <span class="text c-animate revealTextAnime revealTextBgMain">change</span>
+              <br>
+              <span class="text c-animate revealTextAnime revealTextBgMain">the world</span>
+            </span>
+            <span class="hp_pc_show">
+              <span class="text c-animate revealTextAnime revealTextBgMain">you can change</span>
+              <br>
+              <span class="text c-animate revealTextAnime revealTextBgMain">the world</span>
+            </span>
+          </p>
+          <p class="mv__message_sub"><span class="text c-animate revealTextAnime revealTextBgMain">世界で活躍できるグローバルな人材を育てる</span></p>
         </div>
       </div>
     </section>
@@ -80,15 +93,15 @@
         <figure class="p-company__bg p-company__bg--pc hp_pc_show"><img src="assets/images/top/bg_company_pc.png" alt=""></figure>
         <div class="l-container">
           <div class="p-sec-heading">
-            <h2 class="p-sec-heading__title"><span class="en">about us</span><span class="ja">当社について</span></h2>
-            <div class="p-sec-heading__btn hp_pc_show">
+            <h2 class="p-sec-heading__title js-title c-animate fadeUpAnime"><span class="en">about us</span><span class="ja">当社について</span></h2>
+            <div class="p-sec-heading__btn hp_pc_show c-animate fadeUpAnime">
               <a href="company.html" class="p-sec-heading__btn-link p-sec-heading__btn--white">
                 View more<span class="arrow"></span><span class="circle"></span>
               </a>
             </div>
           </div>
           <div class="p-company__wrap">
-            <div class="p-company__wrap_text">
+            <div class="p-company__wrap_text c-animate fadeUpAnime">
               <p>急速に広がったグローバル社会に対応できる人材を育成することで、文化・言語の垣根を越えたコミュニケーションを活発にし、一人でも多くの人が豊かに暮らせる世界を実現することを使命とする。</p>
               <p>コミュニケーションスキル習得をサポートすることで一人でも多くのビジネスパーソンの視野を広げ、世界を舞台に新しい相乗効果を生む未来を創造する。</p>
               <p>文化の垣根を越えた人と人とのつながりが新しい価値を生むことを信念とする。</p>
@@ -276,21 +289,21 @@
   </main>
 
   <!-- footer -->
-  <footer class="l-footer">
-    <ul class="l-footer__conversion">
-      <li class="l-footer__conversion_item l-footer__conversion_item--download">
-        <p class="l-footer__conversion_ttl"><span class="en un_en">download</span><span class="ja">資料ダウンロード</span></p>
-        <div class="l-footer__conversion_btn"><a href="download.html" class="btn btn--arrow un_en">View more<span class="arrow"></span></a></div>
+  <footer class="footer">
+    <ul class="footer__conversion">
+      <li class="footer__conversion_item footer__conversion_item--download">
+        <p class="footer__conversion_ttl"><span class="en un_en">download</span><span class="ja">資料ダウンロード</span></p>
+        <div class="footer__conversion_btn"><a href="download.html" class="btn btn--arrow un_en">View more<span class="arrow"></span></a></div>
       </li>
-      <li class="l-footer__conversion_item l-footer__conversion_item--contact">
-        <p class="l-footer__conversion_ttl"><span class="en un_en">contact</span><span class="ja">お問い合わせ</span></p>
-        <div class="l-footer__conversion_btn"><a href="contact.html" class="btn btn--arrow un_en">View more<span class="arrow"></span></a></div>
+      <li class="footer__conversion_item footer__conversion_item--contact">
+        <p class="footer__conversion_ttl"><span class="en un_en">contact</span><span class="ja">お問い合わせ</span></p>
+        <div class="footer__conversion_btn"><a href="contact.html" class="btn btn--arrow un_en">View more<span class="arrow"></span></a></div>
       </li>
     </ul>
-    <div class="l-footer__contents">
-      <div class="l-footer__logo"><a href="index.html"><img src="assets/images/common/logo-w.svg" alt="Global Standard"></a></div>
-      <p class="l-footer__info">〒550-1000　大阪市西区土佐堀9-5-5<br>TEL　06-123-4567<br>FAX　06-123-4568</p>
-      <p class="l-footer__copyright"><small>©︎2021 Global Standard. All Rights Reserved.</small></p>
+    <div class="footer__contents">
+      <div class="footer__logo"><a href="index.html"><img src="assets/images/common/logo-w.svg" alt="Global Standard"></a></div>
+      <p class="footer__info">〒550-1000　大阪市西区土佐堀9-5-5<br>TEL　06-123-4567<br>FAX　06-123-4568</p>
+      <p class="footer__copyright"><small>©︎2021 Global Standard. All Rights Reserved.</small></p>
     </div>
   </footer>
   <!-- // footer -->

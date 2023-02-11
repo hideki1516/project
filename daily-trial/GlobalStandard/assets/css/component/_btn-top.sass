@@ -8,7 +8,7 @@
   width: 40px
   height: 40px
   opacity: 0
-  transition: all .3s
+  transition: transform .2s $easeInOut
   z-index: 9999
 
   @include responsive(md)
@@ -16,4 +16,7 @@
     bottom: 40px
     
     a
-      display: inline-block
+      display: block
+  
+  @include hover()
+    transform: translateY(-8px)
